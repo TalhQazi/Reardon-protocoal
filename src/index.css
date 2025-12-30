@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Light Theme inspired by Reardon logo */
+    /* Soft warm off-white background */
+    --background: 42 40% 98%;
+    /* Deep navy text similar to logo typography */
+    --foreground: 210 60% 16%;
+
+    /* Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 16%;
+
+    /* Primary - teal/blue from logo drop */
+    --primary: 194 86% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - very light teal-tinted background */
+    --secondary: 188 53% 92%;
+    --secondary-foreground: 210 60% 20%;
+
+    --muted: 210 25% 88%;
+    --muted-foreground: 210 15% 40%;
+
+    --accent: 195 72% 85%;
+    --accent-foreground: 210 60% 20%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 24% 86%;
+    --input: 210 24% 86%;
+    --ring: 194 86% 42%;
+
+    --radius: 0.5rem;
+
+    /* Pathway Colors (harmonized to teal family but distinct lightness) */
+    --diabetes: 194 86% 42%;
+    --diabetes-glow: 194 86% 52%;
+    --diabetes-muted: 194 40% 75%;
+
+    --cancer: 205 100% 30%;
+    --cancer-glow: 205 100% 40%;
+    --cancer-muted: 205 40% 75%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(180deg, hsl(42 40% 98%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-diabetes: linear-gradient(135deg, hsl(194 86% 50% / 0.35) 0%, hsl(42 40% 98%) 60%);
+    --gradient-cancer: linear-gradient(135deg, hsl(205 100% 40% / 0.35) 0%, hsl(42 40% 98%) 60%);
+    --gradient-glow-diabetes: radial-gradient(ellipse at center, hsl(194 86% 50% / 0.35) 0%, transparent 70%);
+    --gradient-glow-cancer: radial-gradient(ellipse at center, hsl(205 100% 45% / 0.35) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-glow-diabetes: 0 0 40px hsl(194 86% 50% / 0.45);
+    --shadow-glow-cancer: 0 0 40px hsl(205 100% 45% / 0.45);
+    --shadow-elevated: 0 18px 40px -16px hsl(210 20% 40% / 0.25);
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 60% 16%;
+    --sidebar-primary: 194 86% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 188 53% 92%;
+    --sidebar-accent-foreground: 210 60% 20%;
+    --sidebar-border: 210 24% 86%;
+    --sidebar-ring: 194 86% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-diabetes {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(194 86% 52%) 0%, hsl(194 86% 40%) 100%);
+  }
+
+  .text-gradient-cancer {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(205 100% 45%) 0%, hsl(205 100% 32%) 100%);
+  }
+
+  .glow-diabetes {
+    box-shadow: var(--shadow-glow-diabetes);
+  }
+
+  .glow-cancer {
+    box-shadow: var(--shadow-glow-cancer);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, hsl(210 24% 86% / 0.9) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(210 24% 86% / 0.9) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(42 40% 98%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(210 24% 80%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(210 24% 70%);
+}
