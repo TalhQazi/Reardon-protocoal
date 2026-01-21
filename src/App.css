@@ -40,3 +40,59 @@
 .read-the-docs {
   color: #888;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .shadow-glow-diabetes {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  }
+
+  .shadow-glow-cancer {
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+  }
+}
+@layer utilities {
+  .animate-gradient-slow {
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}

@@ -11,33 +11,54 @@ const Science = () => {
 
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 min-h-screen overflow-hidden bg-[url('/17.jpeg')] bg-cover bg-[position:center_top]">
-          <div className="absolute inset-0 bg-white/20" />
+        <section className="relative py-20 lg:py-24 overflow-hidden bg-background">
+          <div className="pointer-events-none absolute -top-24 -left-10 w-72 h-72 bg-diabetes/10 rounded-full blur-3xl" />
+          <div className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 bg-cancer/10 rounded-full blur-3xl" />
 
-          <div className="relative max-w-5xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8">
-                <Atom className="w-4 h-4 text-foreground" />
-                <span className="text-sm text-muted-foreground font-medium">
-                  Scientific Foundation
-                </span>
-              </div>
+          <div className="relative max-w-6xl mx-auto px-6">
+            <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-10 items-center">
+              {/* Left: Text */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-6">
+                  <Atom className="w-4 h-4 text-foreground" />
+                  <span className="text-sm text-muted-foreground font-medium">
+                    Scientific Foundation
+                  </span>
+                </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Systems Biology
-                <br />
-                <span className="text-white">Not Symptom Chasing</span>
-              </h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-5">
+                  Systems Biology
+                  <br />
+                  <span className="text-foreground">Not Symptom Chasing</span>
+                </h1>
 
-              <p className="text-xl text-foreground max-w-2xl">
-                Understanding why single-target approaches fail and how coordinated biological 
-                pressure creates lasting metabolic change.
-              </p>
-            </motion.div>
+                <p className="text-xl text-muted-foreground max-w-2xl">
+                  Understanding why single-target approaches fail and how coordinated biological
+                  pressure creates lasting metabolic change.
+                </p>
+              </motion.div>
+
+              {/* Right: Image */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="relative max-w-md w-full mx-auto"
+              >
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-card shadow-xl shadow-black/5">
+                  <img
+                    src="/22.jpeg"
+                    alt="Scientific systems visual"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
