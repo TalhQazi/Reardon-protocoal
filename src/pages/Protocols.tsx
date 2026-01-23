@@ -13,33 +13,11 @@ const Protocols = () => {
       <main className="pt-16">
         {/* Hero */}
         <section className="relative py-16 lg:py-24 border-b border-border bg-gradient-to-b from-secondary/10 via-background to-background overflow-hidden">
-          {/* Background decorative elements */}
+          {/* Background decorative elements (static for performance) */}
           <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-diabetes/5 blur-3xl"
-              animate={{
-                y: [0, -20, 0],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-1/4 right-10 w-80 h-80 rounded-full bg-cancer/5 blur-3xl"
-              animate={{
-                y: [0, 20, 0],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
+            <div className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-diabetes/5 blur-3xl" />
+            <div className="absolute bottom-1/4 right-10 w-80 h-80 rounded-full bg-cancer/5 blur-3xl" />
+
             <div className="absolute inset-0 opacity-[0.02]">
               <div 
                 className="absolute inset-0"
@@ -168,17 +146,14 @@ const Protocols = () => {
                     { value: "24/7", label: "Support" },
                     { value: "1000+", label: "Patients" },
                     { value: "4.9★", label: "Rating" },
-                  ].map((metric, index) => (
-                    <motion.div
+                  ].map((metric) => (
+                    <div
                       key={metric.label}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.7 + (index * 0.1) }}
                       className="text-center"
                     >
                       <p className="text-xl font-bold text-foreground">{metric.value}</p>
                       <p className="text-xs text-muted-foreground mt-1">{metric.label}</p>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </motion.div>

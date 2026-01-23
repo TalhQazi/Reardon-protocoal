@@ -46,14 +46,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-22">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="relative w-14 h-14 rounded-full overflow-hidden border border-border/60 bg-card">
-              <img
-                src="/6.jpeg"
-                alt="The Reardon Protocol logo"
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
-            </div>
+            
             <span className="text-lg font-semibold tracking-tight">
               The Reardon Protocol
             </span>

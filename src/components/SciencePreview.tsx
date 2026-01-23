@@ -578,9 +578,9 @@ export function SciencePreview() {
                 />
                 
                 <img
-                  src="/13.jpeg"
+                  src="/25.png"
                   alt="Scientific visualization behind The Reardon Protocol"
-                  className="w-full h-full object-cover scale-110"
+                  className="object-cover scale-110"
                   loading="lazy"
                 />
                 
